@@ -1,4 +1,4 @@
-<section data-ng-controller="GradebooksController" data-ng-init="find()">
+<section data-ng-controller="StudentsController" data-ng-init="find()">
     <div class="container">
         <div class="page-header">
             <h1>Gradebook</h1>
@@ -16,9 +16,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
+                            <tr data-ng-repeat="student in students | orderBy: 'lname'">
+                                <td><span data-ng-bind="student.lname"></span>, <span data-ng-bind="student.name"></span></td>
+                                <td data-ng-bind="student.studid"></td>
                                 <td><input type="text" /></td>
                             </tr>
                         </tbody>

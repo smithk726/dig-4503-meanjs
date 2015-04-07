@@ -1,7 +1,7 @@
 <section data-ng-controller="StudentsController" data-ng-init="findOne()">
 	<div class="container borderit">
 		<div class="page-header">
-			<h1 data-ng-bind="student.name"></h1>
+			<h1><span data-ng-bind="student.name"></span> <span data-ng-bind="student.lname"></span></h1>
 		</div>
 		<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == student.user._id))">
 			<a class="btn btn-primary" href="/#!/students/{{student._id}}/edit">
@@ -11,37 +11,50 @@
 				<i class="glyphicon glyphicon-trash"></i>
 			</a>
 		</div>
-		<small>
-			<em class="text-muted">
-				Posted on
-				<span data-ng-bind="student.created | date:'mediumDate'"></span>
-				by
-				<span data-ng-bind="student.user.displayName"></span>
-			</em>
-		</small>
 
 		<div class="row">
 			<h2>Student Info</h2>
 			<div class="col-md-6 noPadLeft">
-				<h4>First Name:</h4>
-				<h4>Last Name:</h4>
-				<h4>Student ID:</h4>
+				<div class="col-md-3 noPadLeft text-right">
+					<h4>First Name:</h4>
+					<h4>Last Name:</h4>
+					<h4>Student ID:</h4>
+				</div>
+				<div class="col-md-9 noPadRight">
+					<h4 data-ng-bind="student.name"></h4>
+					<h4 data-ng-bind="student.lname"></h4>
+					<h4 data-ng-bind="student.studid"></h4>
+				</div>
 			</div>
 			<div class="col-md-6 noPadRight">
-				<h4>Username:</h4>
-				<h4>Password:</h4>
+				<div class="col-md-3 noPadLeft text-right">
+					<h4>Username:</h4>
+					<h4>Password:</h4>
+				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<h2>Parent Info</h2>
 			<div class="col-md-6 noPadLeft">
-				<h4>First Name:</h4>
-				<h4>Last Name:</h4>
+				<div class="col-md-3 noPadLeft text-right">
+					<h4>First Name:</h4>
+					<h4>Last Name:</h4>
+				</div>
+				<div class="col-md-9 noPadRight">
+					<h4 data-ng-bind="student.pname"></h4>
+					<h4 data-ng-bind="student.plname"></h4>
+				</div>
 			</div>
 			<div class="col-md-6 noPadRight">
-				<h4>Phone Number:</h4>
-				<h4>Email:</h4>
+				<div class="col-md-3 noPadLeft text-right">
+					<h4>Phone:</h4>
+					<h4>Email:</h4>
+				</div>
+				<div class="col-md-9 noPadRight">
+					<h4 data-ng-bind="student.phonenum"></h4>
+					<h4 data-ng-bind="student.pemail"></h4>
+				</div>
 			</div>
 		</div>
 	</div>
