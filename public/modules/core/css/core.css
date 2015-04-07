@@ -34,6 +34,47 @@ body {
 .noPadRight {
 	padding-right: 0;
 }
+.marginit {
+	margin-top: 15px;
+}
+
+.borderit {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.listgroup {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.navbg {
+	background-color: #5D8DDE;
+}
+.navbar-nav > li > a {
+	color: white;
+	text-shadow: none;
+}
+.navbar-nav > li > a:hover {
+	background: #476DAD;
+}
+.navbar-nav > li > .active > a,
+.navbar-nav > .active > a:focus {
+	background: #476DAD;
+}
+.navbar-toggle .icon-bar {
+	color: white;
+}
+.navbar-header > a {
+	color: white;
+	text-shadow: none;
+}
+.navbar-brand {
+	padding: 0;
+}
 
 /* FORMS */
 .form-horizontal .form-group {
