@@ -1,4 +1,4 @@
-<section data-ng-controller="AssignmentsController">
+<section data-ng-controller="AssignmentsController" data-ng-show="authentication.user && authentication.user.utype == 'Teacher'">
     <div class="container">
         <div class="page-header">
             <h1>Assignments</h1>
@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label" for="due">Due Date</label>
+                                    <label class="control-label" for="due">Due Date (ex Apr 04, 2015 or 4/4/15)</label>
                                     <div class="controls">
                                         <input type="text" data-ng-model="due" id="due" class="form-control" placeholder="Due Date" required>
                                     </div>
@@ -52,18 +52,68 @@
             <div class="col-md-8 noPadRight" data-ng-init="find()">
                 <div class="row borderit">
                     <div class="list-group">
-                        <a data-ng-repeat="assignment in assignments" data-ng-href="#!/assignments/{{assignment._id}}" class="list-group-item">
-                            <small class="list-group-item-text">
-                                Posted on
-                                <span data-ng-bind="assignment.created | date:'medium'"></span>
-                                by
-                                <span data-ng-bind="assignment.user.displayName"></span>
-                            </small>
-                            <h4 class="list-group-item-heading" data-ng-bind="assignment.name"></h4>
-                        </a>
+                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" class="list-group-item">
+                            <div class="row">
+                                <a href="#!/assignments/{{assignment._id}}" class="col-md-10 noPadLeft">
+                                    <div>
+                                        <small class="list-group-item-text">
+                                            Posted on
+                                            <span data-ng-bind="assignment.created | date:'mediumDate'"></span>
+                                            - Due
+                                            <span data-ng-bind="assignment.due | date:'mediumDate'"></span>
+                                        </small>
+                                        <h4 class="list-group-item-heading" data-ng-bind="assignment.name"></h4>
+                                    </div>
+                                </a>
+                                <div class="col-md-2 noPadRight" data-ng-show="((authentication.user) && (authentication.user._id == assignment.user._id))">
+                                    <a class="btn btn-primary" href="/#!/assignments/{{assignment._id}}/edit">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="alert alert-warning text-center" data-ng-hide="!assignments.$resolved || assignments.length">
-                        No Assignments yet, why don't you <a href="/#!/assignments/create">create one</a>?
+                        No Assignments yet, why don't you create one?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-ng-controller="AssignmentsController" data-ng-show="authentication.user && authentication.user.utype == 'Student'">
+    <div class="container">
+        <div class="page-header">
+            <h1>Assignments</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 noPadRight noPadLeft" data-ng-init="find()">
+                <div class="row">
+                    <div class="list-group">
+                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" class="list-group-item">
+                            <div class="row">
+                                <a href="#!/assignments/{{assignment._id}}" class="col-md-10 noPadLeft">
+                                    <div>
+                                        <small class="list-group-item-text">
+                                            Posted on
+                                            <span data-ng-bind="assignment.created | date:'mediumDate'"></span>
+                                            - Due
+                                            <span data-ng-bind="assignment.due | date:'mediumDate'"></span>
+                                        </small>
+                                        <h4 class="list-group-item-heading" data-ng-bind="assignment.name"></h4>
+                                    </div>
+                                </a>
+                                <div class="col-md-2 noPadRight" data-ng-show="((authentication.user) && (authentication.user._id == assignment.user._id))">
+                                    <a class="btn btn-primary" href="/#!/assignments/{{assignment._id}}/edit">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning text-center" data-ng-hide="!assignments.$resolved || assignments.length">
+                        No Assignments yet, why don't you create one?
                     </div>
                 </div>
             </div>

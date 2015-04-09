@@ -9,7 +9,34 @@ angular.module('planners').controller('PlannersController', ['$scope', '$statePa
 		$scope.create = function() {
 			// Create new Planner object
 			var planner = new Planners ({
-				name: this.name
+				name: this.name,
+				words: this.words,
+				weekmess: this.weekmess,
+				tests: this.tests,
+				projects: this.projects,
+				testdes: this.testdes,
+				projectdes: this.projectdes,
+				pfileup: this.pfileup,
+				mhwdue: this.mhwdue,
+				mhwassign: this.mhwassign,
+				mact: this.mact,
+				mmaterials: this.mmaterials,
+				thwdue: this.thwdue,
+				thwassign: this.thwassign,
+				tact: this.tact,
+				tmaterials: this.tmaterials,
+				whwdue: this.whwdue,
+				whwassign: this.whwassign,
+				wact: this.wact,
+				wmaterials: this.wmaterials,
+				thhwdue: this.thhwdue,
+				thhwassign: this.thhwassign,
+				thact: this.thact,
+				thmaterials: this.thmaterials,
+				fhwdue: this.fhwdue,
+				fhwassign: this.fhwassign,
+				fact: this.fact,
+				fmaterials: this.fmaterials
 			});
 
 			// Redirect after save

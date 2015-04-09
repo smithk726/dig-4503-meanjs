@@ -43,8 +43,14 @@ body {
 .margintop5 {
 	margin-top: 5px;
 }
+.margintop10 {
+	margin-top: 10px;
+}
 .margintop15 {
 	margin-top: 15px;
+}
+.marginbottom25 {
+	margin-bottom: 25px;
 }
 
 .borderit {

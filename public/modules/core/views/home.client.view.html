@@ -158,17 +158,48 @@
 </section>
 
 <section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Student'">
-	<div class="container marginit">
-		<div class="page-header">
-			<h1>Recent Activity for Kids!</h1>
-		</div>
-
-		<div class="row borderit">
-			<div class="col-md-8 noPadLeft">
-				main stuff
+	<div class="container margintop">
+		<div class="row">
+			<div class="col-md-2 noPadLeft borderit">
+				<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+				<br>
+				<p>Welcome, <span data-ng-bind="authentication.user.displayName"></span></p>
 			</div>
-			<div class="col-md-4 noPadRight">
-				other stuff
+			<div class="col-md-10 noPadRight">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row borderit text-center">
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<br>
+							<a href="/#!/planners">to planner</a>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="row borderit text-center">
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<br>
+							<a href="/#!/assignments">to assignments</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row margintop15">
+					<div class="col-md-6">
+						<div class="row borderit text-center">
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<br>
+							<a href="/#!/messages">to messages</a>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="row borderit text-center">
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

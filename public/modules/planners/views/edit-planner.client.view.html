@@ -3,21 +3,329 @@
         <div class="page-header">
             <h1>Edit Planner</h1>
         </div>
-        <div class="col-md-12">
+        <div class="row borderit marginbottom25">
             <form class="form-horizontal" data-ng-submit="update()" novalidate>
                 <fieldset>
-                    <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
-                        <div class="controls">
-                            <input type="text" data-ng-model="planner.name" id="name" class="form-control" placeholder="Name" required>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h2 class="rowpad">Week</h2>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name">Week Date</label>
+                                        <div class="controls">
+                                            <input type="text" data-ng-model="planner.name" id="name" class="form-control" placeholder="Date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Spelling Words</h2>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="words">Spelling Words</label>
+                                        <div class="controls">
+                                            <input type="text" data-ng-model="planner.words" id="words" class="form-control" placeholder="Spelling Words" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Weekly Message</h2>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="weekmess">Weekly Message</label>
+                                        <div class="controls">
+                                            <textarea type="text" row="2" data-ng-model="planner.weekmess" id="weekmess" class="form-control" placeholder="Weekly Message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Tests and Projects</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="tests">Test</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.tests" id="tests" class="form-control" placeholder="Test">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="projects">Project</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.projects" id="projects" class="form-control" placeholder="Project">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="testdes">Test Description</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.testdes" id="testdes" class="form-control" placeholder="Test Description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="projectdes">Project Description</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.projectdes" id="projectdes" class="form-control" placeholder="Project Description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-offset-6 col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="pfileup">Project Docs</label>
+                                            <div class="controls">
+                                                <input type="file" data-ng-model="planner.pfileup" id="pfileup" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Monday</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="mhwdue">Homework Due</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.mhwdue" id="mhwdue" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="mhwassign">Homework Assign</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.mhwassign" id="mhwassign" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="mact">Activities</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.mact" id="mact" class="form-control" placeholder="Activities" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="mmaterials">Materials to Bring</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.mmaterials" id="mmaterials" class="form-control" placeholder="Materials" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Tuesday</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thwdue">Homework Due</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.thwdue" id="thwdue" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thwassign">Homework Assign</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.thwassign" id="thwassign" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="tact">Activities</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.tact" id="tact" class="form-control" placeholder="Activities" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="tmaterials">Materials to Bring</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.tmaterials" id="tmaterials" class="form-control" placeholder="Materials" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Wednesday</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="whwdue">Homework Due</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.whwdue" id="whwdue" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="whwassign">Homework Assign</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.whwassign" id="whwassign" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="wact">Activities</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.wact" id="wact" class="form-control" placeholder="Activities" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="wmaterials">Materials to Bring</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.wmaterials" id="wmaterials" class="form-control" placeholder="Materials" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Thursday</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thhwdue">Homework Due</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.thhwdue" id="thhwdue" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thhwassign">Homework Assign</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.thhwassign" id="thhwassign" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thact">Activities</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.thact" id="thact" class="form-control" placeholder="Activities" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="thmaterials">Materials to Bring</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.thmaterials" id="thmaterials" class="form-control" placeholder="Materials" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h2>Friday</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="fhwdue">Homework Due</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.fhwdue" id="fhwdue" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="fhwassign">Homework Assign</label>
+                                            <div class="controls">
+                                                <input type="text" data-ng-model="planner.fhwassign" id="fhwassign" class="form-control" placeholder="Homework" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="fact">Activities</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.fact" id="fact" class="form-control" placeholder="Activities" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="fmaterials">Materials to Bring</label>
+                                            <div class="controls">
+                                                <textarea type="text" rows="3" data-ng-model="planner.fmaterials" id="fmaterials" class="form-control" placeholder="Materials" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <div class="row rowpad">
+                                <div class="form-group">
+                                    <input type="submit" value="Update" class="btn btn-default">
+                                </div>
+                                <div data-ng-show="error" class="text-danger">
+                                    <strong data-ng-bind="error"></strong>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Update" class="btn btn-default">
-                    </div>
-    				<div data-ng-show="error" class="text-danger">
-    					<strong data-ng-bind="error"></strong>
-    				</div>
                 </fieldset>
             </form>
         </div>

@@ -3,21 +3,32 @@
 		<div class="page-header">
 			<h1 data-ng-bind="assignment.name"></h1>
 		</div>
-		<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == assignment.user._id))">
-			<a class="btn btn-primary" href="/#!/assignments/{{assignment._id}}/edit">
-				<i class="glyphicon glyphicon-edit"></i>
-			</a>
-			<a class="btn btn-primary" data-ng-click="remove();">
-				<i class="glyphicon glyphicon-trash"></i>
-			</a>
+		<div class="row borderit">
+			<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == assignment.user._id))">
+				<a class="btn btn-primary" href="/#!/assignments/{{assignment._id}}/edit">
+					<i class="glyphicon glyphicon-edit"></i>
+				</a>
+				<a class="btn btn-primary" data-ng-click="remove();">
+					<i class="glyphicon glyphicon-trash"></i>
+				</a>
+			</div>
+			<small>
+				<em class="text-muted">
+					Posted on
+					<span data-ng-bind="assignment.created | date:'mediumDate'"></span>
+					by
+					<span data-ng-bind="assignment.user.displayName"></span>
+				</em>
+			</small>
+			<div class="row">
+				<div class="row">
+					<h3>Due Date: <span data-ng-bind="assignment.due | date: 'mediumDate'"></span></h3>
+				</div>
+				<div class="row">
+					<h3>Description:</h3>
+					<p data-ng-bind="assignment.description"></p>
+				</div>
+			</div>
 		</div>
-		<small>
-			<em class="text-muted">
-				Posted on
-				<span data-ng-bind="assignment.created | date:'mediumDate'"></span>
-				by
-				<span data-ng-bind="assignment.user.displayName"></span>
-			</em>
-		</small>
 	</div>
 </section>

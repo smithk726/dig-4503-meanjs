@@ -13,8 +13,21 @@ var AssignmentSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Assignment name',
+		required: 'Please fill assignment name',
 		trim: true
+	},
+	description: {
+		type: String,
+		default: ''
+	},
+	due: {
+		type: Date,
+		default: '',
+		required: 'Please fill in a due date'
+	},
+	fileup: {
+		type: String,
+		default: ''
 	},
 	created: {
 		type: Date,

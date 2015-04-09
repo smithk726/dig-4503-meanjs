@@ -3,7 +3,7 @@
         <div class="page-header">
             <h1>Edit Assignment</h1>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 noPadLeft noPadRight borderit">
             <form class="form-horizontal" data-ng-submit="update()" novalidate>
                 <fieldset>
                     <div class="form-group">
@@ -12,6 +12,25 @@
                             <input type="text" data-ng-model="assignment.name" id="name" class="form-control" placeholder="Name" required>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label" for="description">Description</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="assignment.description" id="description" class="form-control" placeholder="Description" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="due">Due Date</label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="assignment.due" id="due" class="form-control" placeholder="Due Date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="fileup">File Upload (optional)</label>
+                        <div class="controls">
+                            <input type="file" data-ng-model="assignment.fileup" id="fileup" class="form-control">
+                         </div>
+                    </div>
+
                     <div class="form-group">
                         <input type="submit" value="Update" class="btn btn-default">
                     </div>

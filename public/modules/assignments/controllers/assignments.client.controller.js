@@ -5,11 +5,16 @@ angular.module('assignments').controller('AssignmentsController', ['$scope', '$s
 	function($scope, $stateParams, $location, Authentication, Assignments) {
 		$scope.authentication = Authentication;
 
+		$scope.currentDate = new Date();
+
 		// Create new Assignment
 		$scope.create = function() {
 			// Create new Assignment object
 			var assignment = new Assignments ({
-				name: this.name
+				name: this.name,
+				description: this.description,
+				due: this.due,
+				fileup: this.fileup
 			});
 
 			// Redirect after save

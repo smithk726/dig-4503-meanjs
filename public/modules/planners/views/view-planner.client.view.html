@@ -1,23 +1,175 @@
 <section data-ng-controller="PlannersController" data-ng-init="findOne()">
-	<div class="container borderit">
+	<div class="container marginbottom25">
 		<div class="page-header">
 			<h1 data-ng-bind="planner.name"></h1>
 		</div>
-		<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == planner.user._id))">
-			<a class="btn btn-primary" href="/#!/planners/{{planner._id}}/edit">
-				<i class="glyphicon glyphicon-edit"></i>
-			</a>
-			<a class="btn btn-primary" data-ng-click="remove();">
-				<i class="glyphicon glyphicon-trash"></i>
-			</a>
+		<div class="row borderit">
+			<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == planner.user._id))">
+				<a class="btn btn-primary" href="/#!/planners/{{planner._id}}/edit">
+					<i class="glyphicon glyphicon-edit"></i>
+				</a>
+				<a class="btn btn-primary" data-ng-click="remove();">
+					<i class="glyphicon glyphicon-trash"></i>
+				</a>
+			</div>
+			<small>
+				<em class="text-muted">
+					Posted on
+					<span data-ng-bind="planner.created | date:'mediumDate'"></span>
+					by
+					<span data-ng-bind="planner.user.displayName"></span>
+				</em>
+			</small>
 		</div>
-		<small>
-			<em class="text-muted">
-				Posted on
-				<span data-ng-bind="planner.created | date:'mediumDate'"></span>
-				by
-				<span data-ng-bind="planner.user.displayName"></span>
-			</em>
-		</small>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h4 data-ng-bind="planner.weekmess"></h4>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Spelling Words</h2>
+				<p data-ng-bind="planner.words"></p>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Tests</h2>
+				<h4 data-ng-bind="planner.tests"></h4>
+				<p data-ng-bind="planner.testdes"></p>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Projects</h2>
+				<h4 data-ng-bind="planner.projects"></h4>
+				<p data-ng-bind="planner.projectdes"></p>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Monday</h2>
+				<div class="row">
+					<div class="col-md-6 noPadLeft">
+						<h4>Homework Due</h4>
+						<p data-ng-bind="planner.mhwdue"></p>
+					</div>
+					<div class="col-md-6 noPadRight">
+						<h4>Homework Assignment</h4>
+						<p data-ng-bind="planner.mhwassign"></p>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Activities</h4>
+					<p data-ng-bind="planner.mact"></p>
+				</div>
+				<div class="row">
+					<h4>Materials to Bring</h4>
+					<p data-ng-bind="planner.mmaterials"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Tuesday</h2>
+				<div class="row">
+					<div class="col-md-6 noPadLeft">
+						<h4>Homework Due</h4>
+						<p data-ng-bind="planner.thwdue"></p>
+					</div>
+					<div class="col-md-6 noPadRight">
+						<h4>Homework Assignment</h4>
+						<p data-ng-bind="planner.thwassign"></p>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Activities</h4>
+					<p data-ng-bind="planner.tact"></p>
+				</div>
+				<div class="row">
+					<h4>Materials to Bring</h4>
+					<p data-ng-bind="planner.tmaterials"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Wednesday</h2>
+				<div class="row">
+					<div class="col-md-6 noPadLeft">
+						<h4>Homework Due</h4>
+						<p data-ng-bind="planner.whwdue"></p>
+					</div>
+					<div class="col-md-6 noPadRight">
+						<h4>Homework Assignment</h4>
+						<p data-ng-bind="planner.whwassign"></p>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Activities</h4>
+					<p data-ng-bind="planner.wact"></p>
+				</div>
+				<div class="row">
+					<h4>Materials to Bring</h4>
+					<p data-ng-bind="planner.wmaterials"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Thursday</h2>
+				<div class="row">
+					<div class="col-md-6 noPadLeft">
+						<h4>Homework Due</h4>
+						<p data-ng-bind="planner.thhwdue"></p>
+					</div>
+					<div class="col-md-6 noPadRight">
+						<h4>Homework Assignment</h4>
+						<p data-ng-bind="planner.thhwassign"></p>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Activities</h4>
+					<p data-ng-bind="planner.thact"></p>
+				</div>
+				<div class="row">
+					<h4>Materials to Bring</h4>
+					<p data-ng-bind="planner.thmaterials"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row margintop15 borderit">
+			<div class="row">
+				<h2 class="margintop10">Friday</h2>
+				<div class="row">
+					<div class="col-md-6 noPadLeft">
+						<h4>Homework Due</h4>
+						<p data-ng-bind="planner.fhwdue"></p>
+					</div>
+					<div class="col-md-6 noPadRight">
+						<h4>Homework Assignment</h4>
+						<p data-ng-bind="planner.fhwassign"></p>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Activities</h4>
+					<p data-ng-bind="planner.fact"></p>
+				</div>
+				<div class="row">
+					<h4>Materials to Bring</h4>
+					<p data-ng-bind="planner.fmaterials"></p>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </section>
