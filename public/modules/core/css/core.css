@@ -37,6 +37,15 @@ body {
 .marginit {
 	margin-top: 15px;
 }
+.margintop {
+	margin-top: 70px;
+}
+.margintop5 {
+	margin-top: 5px;
+}
+.margintop15 {
+	margin-top: 15px;
+}
 
 .borderit {
 	position: relative;
@@ -47,10 +56,12 @@ body {
 	border-radius: 4px;
 }
 .listgroup {
-	box-shadow: none;
+	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
+/* NAV */
 .navbg {
 	background-color: #5D8DDE;
 }
@@ -74,6 +85,33 @@ body {
 }
 .navbar-brand {
 	padding: 0;
+}
+
+/* BUTTONS */
+.btn-primary {
+	background-image: none;
+	background-color: #5D8DDE;
+	text-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: #476DAD;
+}
+.btn-primary:focus {
+	background-color: #476DAD;
+}
+.utypeit {
+	font-weight: normal;
+	font-size: 20px;
+}
+
+input[type="radio"]  {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -5px 10px 0 0;
+	vertical-align: middle;
+	cursor: pointer;
 }
 
 /* FORMS */

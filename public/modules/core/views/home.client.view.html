@@ -46,10 +46,121 @@
 
 </section>
 
-<section data-ng-controller="HomeController" data-ng-show="authentication.user">
+<section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Teacher'">
+	<div class="container margintop">
+		<div class="row">
+			<div class="col-md-2 noPadLeft borderit">
+				<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+				<br>
+				<p>Welcome, <span data-ng-bind="authentication.user.displayName"></span></p>
+			</div>
+			<div class="col-md-10 noPadRight">
+				<div class="row borderit">
+					<div class="row">
+						<h3 class="margintop5">Recent Notifications</h3>
+					</div>
+					<div class="row">
+						<div class="list-group margintop5">
+							<a class="list-group-item">
+								<div class="row">
+									<div class="col-md-2 noPadLeft">
+										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+									</div>
+									<div class="col-md-10 noPadRight">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet aliquet finibus. Duis tincidunt lacinia odio quis aliquam. Nam scelerisque fermentum finibus. Sed ullamcorper condimentum elit at placerat. Suspendisse vel purus eget magna tincidunt porttitor eget quis dolor.</p>
+									</div>
+								</div>
+							</a>
+							<a class="list-group-item">
+								<div class="row">
+									<div class="col-md-2 noPadLeft">
+										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+									</div>
+									<div class="col-md-10 noPadRight">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet aliquet finibus. Duis tincidunt lacinia odio quis aliquam. Nam scelerisque fermentum finibus. Sed ullamcorper condimentum elit at placerat. Suspendisse vel purus eget magna tincidunt porttitor eget quis dolor.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="row margintop5 text-center">
+						<a href="/#!/messages">view all messages</a>
+					</div>
+				</div>
+
+				<div class="row margintop15">
+					<div class="col-md-8 noPadLeft">
+						<div class="row borderit">
+							<div class="row">
+								<h3 class="margintop5">Upcoming Assignments</h3>
+							</div>
+
+							<div class="list-group margintop5">
+								<a class="list-group-item">
+									<div class="row">
+										<div class="col-md-3 noPadLeft">
+											date due
+										</div>
+										<div class="col-md-9 noPadRight">
+											assignment title
+										</div>
+									</div>
+								</a>
+								<a class="list-group-item">
+									<div class="row">
+										<div class="col-md-3 noPadLeft">
+											date due
+										</div>
+										<div class="col-md-9 noPadRight">
+											assignment title
+										</div>
+									</div>
+								</a>
+								<a class="list-group-item">
+									<div class="row">
+										<div class="col-md-3 noPadLeft">
+											date due
+										</div>
+										<div class="col-md-9 noPadRight">
+											assignment title
+										</div>
+									</div>
+								</a>
+								<a class="list-group-item">
+									<div class="row">
+										<div class="col-md-3 noPadLeft">
+											date due
+										</div>
+										<div class="col-md-9 noPadRight">
+											assignment title
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="row margintop5 text-center">
+								<a href="/#!/assignments">view all assignments</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 noPadRight">
+						<div class="row borderit">
+							<div class="row">
+								<h3 class="margintop5">To Do</h3>
+								<input> <button>Add</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Student'">
 	<div class="container marginit">
 		<div class="page-header">
-			<h1>Welcome!</h1>
+			<h1>Recent Activity for Kids!</h1>
 		</div>
 
 		<div class="row borderit">
