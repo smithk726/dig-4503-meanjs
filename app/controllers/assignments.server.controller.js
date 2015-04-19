@@ -12,8 +12,17 @@ var mongoose = require('mongoose'),
  * Create a Assignment
  */
 exports.create = function(req, res) {
+	console.log(req.body);
+	console.log(req.files);
+
 	var assignment = new Assignment(req.body);
 	assignment.user = req.user;
+
+	if(req.files.fileup) {
+		assignment.fileup = req.files.fileup.path.substring(7);
+		console.log(assignment.fileup);
+	} else
+		assignment.fileup='default.pdf';
 
 	assignment.save(function(err) {
 		if (err) {

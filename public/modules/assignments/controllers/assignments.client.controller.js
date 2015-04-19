@@ -13,8 +13,7 @@ angular.module('assignments').controller('AssignmentsController', ['$scope', '$s
 			var assignment = new Assignments ({
 				name: this.name,
 				description: this.description,
-				due: this.due,
-				fileup: this.fileup
+				due: this.due
 			});
 
 			// Redirect after save

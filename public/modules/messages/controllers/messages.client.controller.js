@@ -1,8 +1,8 @@
 'use strict';
 
 // Messages controller
-angular.module('messages').controller('MessagesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Messages',
-	function($scope, $stateParams, $location, Authentication, Messages) {
+angular.module('messages').controller('MessagesController', ['$scope', '$stateParams', '$location', '$http', 'Authentication', 'Messages',
+	function($scope, $stateParams, $location, $http, Authentication, Messages) {
 		$scope.authentication = Authentication;
 
 		// Create new Message
@@ -61,6 +61,14 @@ angular.module('messages').controller('MessagesController', ['$scope', '$statePa
 		$scope.findOne = function() {
 			$scope.message = Messages.get({ 
 				messageId: $stateParams.messageId
+			});
+		};
+
+		//Comment a message
+		$scope.commentThis = function() {
+			var message = $scope.message;
+			$http.put('/messages/comment/' + message._id).success(function() {
+				message.comment.push($scope.comment);
 			});
 		};
 	}
