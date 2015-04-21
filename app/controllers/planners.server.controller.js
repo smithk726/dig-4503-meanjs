@@ -12,8 +12,17 @@ var mongoose = require('mongoose'),
  * Create a Planner
  */
 exports.create = function(req, res) {
+	console.log(req.body);
+	console.log(req.files);
+
 	var planner = new Planner(req.body);
 	planner.user = req.user;
+
+	if(req.files.file) {
+		planner.pfileup = req.files.file.path.substring(7);
+		console.log(planner.pfileup);
+	} else
+		planner.pfileup='';
 
 	planner.save(function(err) {
 		if (err) {

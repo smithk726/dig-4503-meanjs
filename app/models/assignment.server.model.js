@@ -23,7 +23,7 @@ var AssignmentSchema = new Schema({
 	due: {
 		type: Date,
 		default: '',
-		required: 'Please fill in a due date'
+		//required: 'Please fill in a due date'
 	},
 	fileup: {
 		type: String,

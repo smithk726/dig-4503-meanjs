@@ -1,8 +1,8 @@
 'use strict';
 
 // Messages controller
-angular.module('messages').controller('MessagesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Messages',
-	function($scope, $stateParams, $location, Authentication, Messages) {
+angular.module('messages').controller('MessagesController', ['$scope', '$stateParams', '$location', '$http', 'Authentication', 'Messages',
+	function($scope, $stateParams, $location, $http, Authentication, Messages) {
 		$scope.authentication = Authentication;
 
 		// Create new Message

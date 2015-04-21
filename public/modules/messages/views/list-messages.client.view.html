@@ -1,5 +1,5 @@
 <section data-ng-controller="MessagesController" data-ng-init="find()" data-ng-show="authentication.user && authentication.user.utype == 'Teacher'">
-    <div class="container">
+    <div class="container marginbottom25">
         <div class="page-header">
             <h1>Messages</h1>
         </div>
@@ -70,7 +70,7 @@
 </section>
 
 <section data-ng-controller="MessagesController" data-ng-init="find()" data-ng-show="authentication.user && authentication.user.utype == 'Student'">
-    <div class="container">
+    <div class="container marginbottom25">
         <div class="page-header">
             <h1>Messages</h1>
         </div>
@@ -97,9 +97,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="alert alert-warning text-center" data-ng-hide="!messages.$resolved || messages.length">
-                        No Messages yet, why don't you <a href="/#!/messages/create">create one</a>?
                     </div>
                 </div>
             </div>

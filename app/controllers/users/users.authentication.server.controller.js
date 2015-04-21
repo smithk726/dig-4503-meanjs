@@ -20,6 +20,42 @@ exports.signup = function(req, res) {
 	var user = new User(req.body);
 	var message = null;
 
+	if(user.utype === 'Teacher') {
+		/*var saveTeach = function() {
+			//all the allowable characters for code
+			var possible = 'abcdefghijklmnopqrstuvwxyz0123456789',
+				teachCode = '';
+
+			//make the access code
+			for (var i = 0; i < 6; i++) {
+				teachCode += possible.charAt(Math.floor(Math.random() * possible.length));
+			}
+
+			//check if this code is already in existence
+			User.find({
+				accesscode: teachCode
+			}, function(err, users) {
+				if (users.length > 0) {
+					saveTeach();
+				}
+				else {
+					user.accesscode = teachCode;
+				}
+			});
+		};
+
+		saveTeach();*/
+
+		var possible = 'abcdefghijklmnopqrstuvwxyz0123456789',
+			teachCode = '';
+
+			//make the access code
+			for (var i = 0; i < 6; i++) {
+				teachCode += possible.charAt(Math.floor(Math.random() * possible.length));
+			}
+		user.accesscode = teachCode;
+	}
+
 	// Add missing user fields
 	user.provider = 'local';
 	user.displayName = user.firstName + ' ' + user.lastName;
@@ -30,7 +66,23 @@ exports.signup = function(req, res) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
-		} else {
+		}
+		/*else if (user.utype === 'Student') {
+		User.find({
+			utype: 'Teacher',
+			accesscode: user.accesscode
+		}, function(err, user) {
+			if (user.length > 0) {
+				console.log('good to go');
+			} else {
+				//console.log('no bueno');
+				return res.status(400).send({
+				message: 'Access Code does not exist'
+			});
+			}
+		});
+	}*/
+		else {
 			// Remove sensitive data before login
 			user.password = undefined;
 			user.salt = undefined;

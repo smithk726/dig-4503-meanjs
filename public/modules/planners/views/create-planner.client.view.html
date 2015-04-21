@@ -4,7 +4,7 @@
             <h1>New Planner</h1>
         </div>
         <div class="row borderit marginbottom25">
-            <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <form class="form-horizontal" data-ng-submit="create()" enctype="multipart/form-data" novalidate>
                 <fieldset>
                     <div class="row">
                         <div class="col-md-12">
@@ -93,10 +93,16 @@
                                         <div class="form-group">
                                             <label class="control-label" for="pfileup">Project Docs</label>
                                             <div class="controls">
-                                                <input type="file" data-ng-model="pfileup" id="pfileup" class="form-control">
+                                                <input type="file" file-model="pfileup" id="pfileup" class="form-control">
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="rowpad">
+                                    <h3>Leave a day blank if there is no school</h3>
                                 </div>
                             </div>
 

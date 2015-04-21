@@ -12,8 +12,17 @@ var mongoose = require('mongoose'),
  * Create a Assignment
  */
 exports.create = function(req, res) {
+	console.log(req.body);
+	console.log(req.files);
+
 	var assignment = new Assignment(req.body);
 	assignment.user = req.user;
+
+	if(req.files.file) {
+		assignment.fileup = req.files.file.path.substring(7);
+		console.log(assignment.fileup);
+	} else
+		assignment.fileup='';
 
 	assignment.save(function(err) {
 		if (err) {
@@ -21,6 +30,7 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			//res.redirect('/#!/assignments/' + assignment._id);
 			res.jsonp(assignment);
 		}
 	});

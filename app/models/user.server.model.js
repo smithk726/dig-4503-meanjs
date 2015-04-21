@@ -63,6 +63,10 @@ var UserSchema = new Schema({
 		type: String,
 		default: ''
 	},
+	accesscode: {
+		type: String,
+		default: ''
+	},
 	salt: {
 		type: String
 	},

@@ -1,6 +1,6 @@
 <section data-ng-controller="HomeController" data-ng-hide="authentication.user">
 	<div class="jumbotron text-center">
-		<div class="container">
+		<div class="container marginbottom25">
 			<div class="row">
 				<div class="col-md-5">
 					<img alt="fish" class="img-responsive img-center" src="modules/core/img/brand/place.gif"/>
@@ -47,7 +47,7 @@
 </section>
 
 <section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Teacher'">
-	<div class="container margintop">
+	<div class="container margintop marginbottom25">
 		<div class="row">
 			<div class="col-md-2 noPadLeft borderit">
 				<img class="img-center" src="modules/core/img/users/100x100.gif"/>
@@ -55,29 +55,26 @@
 				<p>Welcome, <span data-ng-bind="authentication.user.displayName"></span></p>
 			</div>
 			<div class="col-md-10 noPadRight">
-				<div class="row borderit">
+				<div data-ng-controller="MessagesController" class="row borderit">
 					<div class="row">
 						<h3 class="margintop5">Recent Notifications</h3>
 					</div>
-					<div class="row">
+					<div data-ng-init="find()" class="row">
 						<div class="list-group margintop5">
-							<a class="list-group-item">
+							<a data-ng-repeat="message in messages | limitTo:3" data-ng-href="#!/messages/{{message._id}}" class="list-group-item">
 								<div class="row">
 									<div class="col-md-2 noPadLeft">
 										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
 									</div>
 									<div class="col-md-10 noPadRight">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet aliquet finibus. Duis tincidunt lacinia odio quis aliquam. Nam scelerisque fermentum finibus. Sed ullamcorper condimentum elit at placerat. Suspendisse vel purus eget magna tincidunt porttitor eget quis dolor.</p>
-									</div>
-								</div>
-							</a>
-							<a class="list-group-item">
-								<div class="row">
-									<div class="col-md-2 noPadLeft">
-										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
-									</div>
-									<div class="col-md-10 noPadRight">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet aliquet finibus. Duis tincidunt lacinia odio quis aliquam. Nam scelerisque fermentum finibus. Sed ullamcorper condimentum elit at placerat. Suspendisse vel purus eget magna tincidunt porttitor eget quis dolor.</p>
+										<small class="list-group-item-text">
+	                                        Posted on
+	                                        <span data-ng-bind="message.created | date:'medium'"></span>
+	                                        by
+	                                        <span data-ng-bind="message.user.displayName"></span>
+                                    	</small>
+                                    	<h4 class="list-group-item-heading" data-ng-bind="message.name" style="padding-top:10px"></h4>
+										<p data-ng-bind="message.description"></p>
 									</div>
 								</div>
 							</a>
@@ -88,7 +85,7 @@
 					</div>
 				</div>
 
-				<div class="row margintop15">
+				<div data-ng-controller="AssignmentsController" data-ng-init="find()" class="row margintop15">
 					<div class="col-md-8 noPadLeft">
 						<div class="row borderit">
 							<div class="row">
@@ -96,43 +93,13 @@
 							</div>
 
 							<div class="list-group margintop5">
-								<a class="list-group-item">
+								<a data-ng-repeat="assignment in assignments | limitTo:5 | orderBy: 'due'" data-ng-href="#!/assignments/{{assignment._id}}" class="list-group-item">
 									<div class="row">
 										<div class="col-md-3 noPadLeft">
-											date due
+											<p data-ng-bind="assignment.due | date:'mediumDate'" style="padding-top:10px"></p>
 										</div>
 										<div class="col-md-9 noPadRight">
-											assignment title
-										</div>
-									</div>
-								</a>
-								<a class="list-group-item">
-									<div class="row">
-										<div class="col-md-3 noPadLeft">
-											date due
-										</div>
-										<div class="col-md-9 noPadRight">
-											assignment title
-										</div>
-									</div>
-								</a>
-								<a class="list-group-item">
-									<div class="row">
-										<div class="col-md-3 noPadLeft">
-											date due
-										</div>
-										<div class="col-md-9 noPadRight">
-											assignment title
-										</div>
-									</div>
-								</a>
-								<a class="list-group-item">
-									<div class="row">
-										<div class="col-md-3 noPadLeft">
-											date due
-										</div>
-										<div class="col-md-9 noPadRight">
-											assignment title
+											<h4 data-ng-bind="assignment.name"></h4>
 										</div>
 									</div>
 								</a>
@@ -158,7 +125,7 @@
 </section>
 
 <section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Student'">
-	<div class="container margintop">
+	<div class="container margintop marginbottom25">
 		<div class="row">
 			<div class="col-md-2 noPadLeft borderit">
 				<img class="img-center" src="modules/core/img/users/100x100.gif"/>
