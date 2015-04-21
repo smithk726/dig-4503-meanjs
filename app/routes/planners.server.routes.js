@@ -3,6 +3,9 @@
 module.exports = function(app) {
 	var users = require('../../app/controllers/users.server.controller');
 	var planners = require('../../app/controllers/planners.server.controller');
+	var multer = require('multer');
+
+	app.use(multer({ dest:'./public/uploads'}));
 
 	// Planners Routes
 	app.route('/planners')

@@ -28,9 +28,9 @@
 					<h3>Description:</h3>
 					<p data-ng-bind="assignment.description"></p>
 				</div>
-				<div class="row">
+				<div class="row" data-ng-show="assignment.fileup != ''">
 					<h3>Download:</h3>
-					<p><a href="{{ assignment.fileup }}">Download assignment brief</a></p>
+					<p><a href="{{ assignment.fileup }}" target="_blank">Download assignment brief</a></p>
 				</div>
 			</div>
 		</div>

@@ -13,7 +13,8 @@ angular.module('assignments').controller('AssignmentsController', ['$scope', '$s
 			var assignment = new Assignments ({
 				name: this.name,
 				description: this.description,
-				due: this.due
+				due: $scope.due,
+				file: $scope.fileup
 			});
 
 			// Redirect after save
@@ -67,4 +68,20 @@ angular.module('assignments').controller('AssignmentsController', ['$scope', '$s
 			});
 		};
 	}
-]);
+])
+
+.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+}]);

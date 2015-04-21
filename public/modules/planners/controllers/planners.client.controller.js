@@ -16,7 +16,7 @@ angular.module('planners').controller('PlannersController', ['$scope', '$statePa
 				projects: this.projects,
 				testdes: this.testdes,
 				projectdes: this.projectdes,
-				pfileup: this.pfileup,
+				file: $scope.pfileup,
 				mhwdue: this.mhwdue,
 				mhwassign: this.mhwassign,
 				mact: this.mact,
@@ -90,4 +90,20 @@ angular.module('planners').controller('PlannersController', ['$scope', '$statePa
 			});
 		};
 	}
-]);
+])
+
+.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+}]);

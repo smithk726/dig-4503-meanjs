@@ -63,13 +63,5 @@ angular.module('messages').controller('MessagesController', ['$scope', '$statePa
 				messageId: $stateParams.messageId
 			});
 		};
-
-		//Comment a message
-		$scope.commentThis = function() {
-			var message = $scope.message;
-			$http.put('/messages/comment/' + message._id).success(function() {
-				message.comment.push($scope.comment);
-			});
-		};
 	}
 ]);

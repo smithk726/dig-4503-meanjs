@@ -14,10 +14,6 @@ module.exports = function(app) {
 		.put(users.requiresLogin, messages.hasAuthorization, messages.update)
 		.delete(users.requiresLogin, messages.hasAuthorization, messages.delete);
 
-	//add route for commenting
-	app.route('/messages/comment/:messageId')
-		.put(users.requiresLogin, messages.comment);
-
 	// Finish by binding the Message middleware
 	app.param('messageId', messages.messageByID);
 };

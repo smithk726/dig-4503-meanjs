@@ -85,23 +85,6 @@ exports.list = function(req, res) {
 };
 
 /**
- * comment a message
- */
-exports.comment = function(req, res) {
-	req.message.comment.push(req.message.comment);
-
-	req.message.save(function(err) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(req.message);
-		}
-	});
-};
-
-/**
  * Message middleware
  */
 exports.messageByID = function(req, res, next, id) { 

@@ -10,7 +10,8 @@
                         <h3 class="margintop5">Create Assignment</h3>
                     </div>
                     <div class="row">
-                        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+                        <!-- <form class="form-horizontal" action="assignments/" method="post" novalidate enctype="multipart/form-data"> -->
+                        <form class="form-horizontal" data-ng-submit="create()" novalidate enctype="multipart/form-data">
                             <fieldset>
                                 <div class="form-group">
                                     <label class="control-label" for="name">Name</label>
@@ -27,13 +28,13 @@
                                 <div class="form-group">
                                     <label class="control-label" for="due">Due Date (ex Apr 04, 2015 or 4/4/15)</label>
                                     <div class="controls">
-                                        <input type="text" data-ng-model="due" id="due" class="form-control" placeholder="Due Date" required>
+                                        <input type="text" data-ng-model="due" id="due" class="form-control" placeholder="Due Date">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="fileup">File Upload (optional)</label>
                                     <div class="controls">
-                                        <input type="file" data-ng-model="fileup" id="fileup" class="form-control">
+                                        <input type="file" file-model="fileup" id="fileup" class="form-control">
                                     </div>
                                 </div>
 

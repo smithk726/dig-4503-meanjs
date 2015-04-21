@@ -20,9 +20,6 @@ var MessageSchema = new Schema({
 		type: String,
 		default: ''
 	},
-	comment: [{
-		type: String,
-	}],
 	created: {
 		type: Date,
 		default: Date.now
