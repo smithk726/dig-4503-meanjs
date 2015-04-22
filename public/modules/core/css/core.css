@@ -118,6 +118,7 @@ input[type="radio"]  {
 	margin: -5px 10px 0 0;
 	vertical-align: middle;
 	cursor: pointer;
+	outline: none;
 }
 
 /* FORMS */
@@ -125,6 +126,51 @@ input[type="radio"]  {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+.userimg input{
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+    outline: none;
+}
+.uone {
+	background-image: url(../img/users/oneswatch.png);
+}
+.utwo {
+	background-image: url(../img/users/twoswatch.png);
+}
+
+.userimg input:active +.uimg {
+	opacity: .9;
+}
+.userimg input:checked +.uimg {
+    -webkit-filter: grayscale(.9) opacity(.5);
+       -moz-filter: grayscale(.9) opacity(.5);
+            filter: grayscale(.9) opacity(.5);
+}
+
+.uimg {
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: opacity(1);
+       -moz-filter: opacity(1);
+            filter: opacity(1);
+}
+.uimg:hover{
+    -webkit-filter: opacity(.7);
+       -moz-filter: opacity(.7);
+            filter: opacity(.7);
+}
+
 
 .undecorated-link:hover {
 	text-decoration: none;

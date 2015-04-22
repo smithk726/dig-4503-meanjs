@@ -67,6 +67,10 @@ var UserSchema = new Schema({
 		type: String,
 		default: ''
 	},
+	uimage: {
+		type: String,
+		default: ''
+	},
 	salt: {
 		type: String
 	},
