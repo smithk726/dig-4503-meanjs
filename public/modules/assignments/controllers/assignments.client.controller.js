@@ -1,8 +1,8 @@
 'use strict';
 
 // Assignments controller
-angular.module('assignments').controller('AssignmentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Assignments',
-	function($scope, $stateParams, $location, Authentication, Assignments) {
+angular.module('assignments').controller('AssignmentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Assignments',
+	function($scope, $stateParams, $location, Authentication, Socket, Assignments) {
 		$scope.authentication = Authentication;
 
 		$scope.currentDate = new Date();

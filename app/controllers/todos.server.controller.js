@@ -5,103 +5,102 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Comment = mongoose.model('Comment'),
+	Todo = mongoose.model('Todo'),
 	_ = require('lodash');
 
 /**
- * Create a Comment
+ * Create a Todo
  */
 exports.create = function(req, res) {
-	var comment = new Comment(req.body);
-	comment.user = req.user;
-	//comment.mparent = req.message;
+	var todo = new Todo(req.body);
+	todo.user = req.user;
 
-	comment.save(function(err) {
+	todo.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(comment);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * Show the current Comment
+ * Show the current Todo
  */
 exports.read = function(req, res) {
-	res.json(req.comment);
+	res.jsonp(req.todo);
 };
 
 /**
- * Update a Comment
+ * Update a Todo
  */
 exports.update = function(req, res) {
-	var comment = req.comment ;
+	var todo = req.todo ;
 
-	comment = _.extend(comment , req.body);
+	todo = _.extend(todo , req.body);
 
-	comment.save(function(err) {
+	todo.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(comment);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * Delete an Comment
+ * Delete an Todo
  */
 exports.delete = function(req, res) {
-	var comment = req.comment ;
+	var todo = req.todo ;
 
-	comment.remove(function(err) {
+	todo.remove(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(comment);
+			res.jsonp(todo);
 		}
 	});
 };
 
 /**
- * List of Comments
+ * List of Todos
  */
 exports.list = function(req, res) { 
-	Comment.find().sort('-created').populate('user', 'displayName').exec(function(err, comments) {
+	Todo.find().sort('-created').populate('user', 'displayName').exec(function(err, todos) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(comments);
+			res.jsonp(todos);
 		}
 	});
 };
 
 /**
- * Comment middleware
+ * Todo middleware
  */
-exports.commentByID = function(req, res, next, id) { 
-	Comment.findById(id).populate('user', 'displayName').exec(function(err, comment) {
+exports.todoByID = function(req, res, next, id) { 
+	Todo.findById(id).populate('user', 'displayName').exec(function(err, todo) {
 		if (err) return next(err);
-		if (! comment) return next(new Error('Failed to load Comment ' + id));
-		req.comment = comment ;
+		if (! todo) return next(new Error('Failed to load Todo ' + id));
+		req.todo = todo ;
 		next();
 	});
 };
 
 /**
- * Comment authorization middleware
+ * Todo authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.comment.user.id !== req.user.id) {
+	if (req.todo.user.id !== req.user.id) {
 		return res.status(403).send('User is not authorized');
 	}
 	next();

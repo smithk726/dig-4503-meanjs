@@ -1,8 +1,8 @@
 'use strict';
 
 // Planners controller
-angular.module('planners').controller('PlannersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Planners',
-	function($scope, $stateParams, $location, Authentication, Planners) {
+angular.module('planners').controller('PlannersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Planners',
+	function($scope, $stateParams, $location, Authentication, Socket, Planners) {
 		$scope.authentication = Authentication;
 
 		// Create new Planner

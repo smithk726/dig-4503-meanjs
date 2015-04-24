@@ -171,6 +171,16 @@ input[type="radio"]  {
             filter: opacity(.7);
 }
 
+/* Socket alert */
+.socketalert {
+	color:white;
+	background: #476DAD;
+	border-radius: 0 0 5px 5px;
+	padding: 8px 0;
+	position: absolute;
+	width: 540px;
+}
+
 
 .undecorated-link:hover {
 	text-decoration: none;

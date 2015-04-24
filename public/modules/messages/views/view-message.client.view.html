@@ -39,7 +39,6 @@
 		                            <div class="controls">
 		                                <textarea type="text" rows="3" data-ng-model="thecomment" id="thecomment" class="form-control" placeholder="Comment" required></textarea>
 		                            </div>
-		                            <input type="hidden" data-ng-model="mparent" id="mparent" value="message._id">
 		                        </div>
 	                    	</div>
 
@@ -60,7 +59,7 @@
 				</div>
 				<div class="row">
 					<div class="list-group">
-						<div data-ng-repeat="comment in comments" class="list-group-item">
+						<div data-ng-repeat="comment in comments" data-ng-if="comment.mparent == message._id" class="list-group-item">
 							<div class="row">
 								<div class="row">
 									<small class="list-group-item-text">

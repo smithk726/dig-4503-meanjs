@@ -9,12 +9,13 @@ angular.module('comments').controller('CommentsController', ['$scope', '$statePa
 		$scope.create = function() {
 			// Create new Comment object
 			var comment = new Comments ({
-				thecomment: this.thecomment
+				thecomment: this.thecomment,
+				mparent: $scope.message._id
 			});
 
 			// Redirect after save
 			comment.$save(function(response) {
-				//$location.path('comments/' + response._id)
+				//$location.path('messages/' + comment.mparent);
 
 				// Clear form fields
 				$scope.thecomment = '';

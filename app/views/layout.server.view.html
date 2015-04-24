@@ -46,6 +46,23 @@
 <body class="ng-cloak">
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbg"></header>
 	<section class="content">
+
+		<div ng-show="myValue" class="container ng-hide" ng-click="myValue = ! myValue">
+			<div class="row text-center">
+				<div class="col-md-offset-3 col-md-6">
+					<p class="socketalert">New Assignment Posted! <span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"></span></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="myPlanner" class="container ng-hide" ng-click="myPlanner = ! myPlanner">
+			<div class="row text-center">
+				<div class="col-md-offset-3 col-md-6">
+					<p class="socketalert">New Planner Posted! <span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer"></span></p>
+				</div>
+			</div>
+		</div>
+
 		<section>
 			{% block content %}{% endblock %}
 		</section>
