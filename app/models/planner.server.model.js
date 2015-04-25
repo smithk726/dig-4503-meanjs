@@ -124,6 +124,9 @@ var PlannerSchema = new Schema({
 		type: String,
 		default: ''
 	},
+	pcode: {
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now

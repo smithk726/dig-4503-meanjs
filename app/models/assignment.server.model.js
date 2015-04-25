@@ -29,6 +29,9 @@ var AssignmentSchema = new Schema({
 		type: String,
 		default: ''
 	},
+	acode: {
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now

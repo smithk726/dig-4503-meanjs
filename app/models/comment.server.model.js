@@ -18,6 +18,12 @@ var CommentSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'Message'
 	},
+	cimage: {
+		type: String
+	},
+	ccode: {
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now

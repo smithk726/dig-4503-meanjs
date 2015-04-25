@@ -36,7 +36,8 @@ angular.module('planners').controller('PlannersController', ['$scope', '$statePa
 				fhwdue: this.fhwdue,
 				fhwassign: this.fhwassign,
 				fact: this.fact,
-				fmaterials: this.fmaterials
+				fmaterials: this.fmaterials,
+				pcode: $scope.authentication.user.accesscode
 			});
 
 			// Redirect after save

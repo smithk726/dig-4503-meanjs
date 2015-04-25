@@ -4,7 +4,7 @@
             <h1>Students</h1>
         </div>
         <div class="list-group">
-            <div data-ng-repeat="student in students"  class="list-group-item">
+            <div data-ng-repeat="student in students" data-ng-if="student.scode == authentication.user.accesscode && student.stype == 'Student'"  class="list-group-item">
     			<h4 class="list-group-item-heading"><span data-ng-bind="student.lname"></span>, <span data-ng-bind="student.name"></span></h4>
             </div>
         </div>

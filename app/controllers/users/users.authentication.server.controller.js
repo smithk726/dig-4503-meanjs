@@ -7,7 +7,8 @@ var _ = require('lodash'),
 	errorHandler = require('../errors.server.controller'),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
-	User = mongoose.model('User');
+	User = mongoose.model('User'),
+	Student = mongoose.model('Student');
 
 /**
  * Signup
@@ -19,6 +20,9 @@ exports.signup = function(req, res) {
 	// Init Variables
 	var user = new User(req.body);
 	var message = null;
+
+	var student = new Student(req.body);
+	student.save();
 
 	if(user.utype === 'Teacher') {
 		/*var saveTeach = function() {

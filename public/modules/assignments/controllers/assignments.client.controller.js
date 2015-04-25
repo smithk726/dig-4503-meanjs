@@ -14,7 +14,8 @@ angular.module('assignments').controller('AssignmentsController', ['$scope', '$s
 				name: this.name,
 				description: this.description,
 				due: $scope.due,
-				file: $scope.fileup
+				file: $scope.fileup,
+				acode: $scope.authentication.user.accesscode
 			});
 
 			// Redirect after save

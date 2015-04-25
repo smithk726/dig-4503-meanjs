@@ -4,7 +4,7 @@
             <h1>Planners</h1>
         </div>
         <div class="list-group">
-            <a data-ng-repeat="planner in planners" data-ng-href="#!/planners/{{planner._id}}" class="list-group-item">
+            <a data-ng-repeat="planner in planners" data-ng-if="planner.pcode == authentication.user.accesscode" data-ng-href="#!/planners/{{planner._id}}" class="list-group-item">
     			<small class="list-group-item-text">
     				Posted on
     				<span data-ng-bind="planner.created | date:'medium'"></span>

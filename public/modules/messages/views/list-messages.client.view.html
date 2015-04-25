@@ -41,7 +41,7 @@
             <div class="col-md-8 noPadRight" data-ng-init="find()">
                 <div class="row borderit">
                     <div class="list-group">
-                        <div data-ng-repeat="message in messages" class="list-group-item">
+                        <div data-ng-repeat="message in messages" data-ng-if="message.mcode == authentication.user.accesscode" class="list-group-item">
                             <div class="row">
                                 <a data-ng-href="#!/messages/{{message._id}}" class="col-md-10 noPadLeft">
                                     <small class="list-group-item-text">
@@ -79,7 +79,7 @@
             <div class="col-md-12 noPadLeft noPadRight" data-ng-init="find()">
                 <div class="row">
                     <div class="list-group">
-                        <div data-ng-repeat="message in messages" class="list-group-item">
+                        <div data-ng-repeat="message in messages" data-ng-if="message.mcode == authentication.user.accesscode" class="list-group-item">
                             <div class="row">
                                 <a data-ng-href="#!/messages/{{message._id}}" class="col-md-10 noPadLeft">
                                     <small class="list-group-item-text">

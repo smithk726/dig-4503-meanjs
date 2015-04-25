@@ -53,7 +53,7 @@
             <div class="col-md-8 noPadRight" data-ng-init="find()">
                 <div class="row borderit">
                     <div class="list-group">
-                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" class="list-group-item">
+                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" data-ng-if="assignment.acode == authentication.user.accesscode" class="list-group-item">
                             <div class="row">
                                 <a href="#!/assignments/{{assignment._id}}" class="col-md-10 noPadLeft">
                                     <div>
@@ -92,7 +92,7 @@
             <div class="col-md-12 noPadRight noPadLeft" data-ng-init="find()">
                 <div class="row">
                     <div class="list-group">
-                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" class="list-group-item">
+                        <div data-ng-repeat="assignment in assignments | orderBy: 'due'" data-ng-if="assignment.acode == authentication.user.accesscode" class="list-group-item">
                             <div class="row">
                                 <a href="#!/assignments/{{assignment._id}}" class="col-md-10 noPadLeft">
                                     <div>

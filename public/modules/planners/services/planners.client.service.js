@@ -43,6 +43,8 @@ function transformFile2(data) {
 	fd.append('fact', data.fact);
 	fd.append('fmaterials', data.fmaterials);
 
+	fd.append('pcode', data.pcode);
+
 	return fd;
 }
 

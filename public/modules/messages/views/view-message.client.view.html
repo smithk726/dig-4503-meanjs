@@ -21,7 +21,12 @@
 				</em>
 			</small>
 			<div class="row margintop15">
-				<p data-ng-bind="message.description"></p>
+				<div class="col-md-2 noPadLeft">
+					<img class="img-center" src="modules/core/img/users/{{message.mimage}}s.png"/>
+				</div>
+				<div class="col-md-10 noPadRight">
+					<p data-ng-bind="message.description"></p>
+				</div>
 			</div>
 		</div>
 
@@ -59,7 +64,7 @@
 				</div>
 				<div class="row">
 					<div class="list-group">
-						<div data-ng-repeat="comment in comments" data-ng-if="comment.mparent == message._id" class="list-group-item">
+						<div data-ng-repeat="comment in comments" data-ng-if="comment.mparent == message._id && comment.ccode == authentication.user.accesscode" class="list-group-item">
 							<div class="row">
 								<div class="row">
 									<small class="list-group-item-text">
@@ -71,7 +76,7 @@
 								</div>
 								<div class="row margintop5">
 									<div class="col-md-1 noPadLeft">
-										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+										<img class="img-center" src="modules/core/img/users/{{comment.cimage}}s.png"/>
 									</div>
 									<div class="col-md-10 noPadRight" style="margin-left:15px">
 										<p data-ng-bind="comment.thecomment"></p>

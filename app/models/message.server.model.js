@@ -20,6 +20,12 @@ var MessageSchema = new Schema({
 		type: String,
 		default: ''
 	},
+	mimage: {
+		type: String
+	},
+	mcode: {
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now

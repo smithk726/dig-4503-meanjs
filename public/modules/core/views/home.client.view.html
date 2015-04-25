@@ -53,6 +53,7 @@
 				<img class="img-center" src="modules/core/img/users/{{ authentication.user.uimage }}s.png"/>
 				<br>
 				<p>Welcome, <span data-ng-bind="authentication.user.displayName"></span></p>
+				<p><strong>Student Access Code:</strong> <span data-ng-bind="authentication.user.accesscode"></span></p>
 			</div>
 			<div class="col-md-10 noPadRight">
 				<div data-ng-controller="MessagesController" class="row borderit">
@@ -61,10 +62,10 @@
 					</div>
 					<div data-ng-init="find()" class="row">
 						<div class="list-group margintop5">
-							<a data-ng-repeat="message in messages | limitTo:3" data-ng-href="#!/messages/{{message._id}}" class="list-group-item">
+							<a data-ng-repeat="message in messages | limitTo:3" data-ng-if="message.mcode == authentication.user.accesscode" data-ng-href="#!/messages/{{message._id}}" class="list-group-item">
 								<div class="row">
 									<div class="col-md-2 noPadLeft">
-										<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+										<img class="img-center" src="modules/core/img/users/{{message.mimage}}s.png"/>
 									</div>
 									<div class="col-md-10 noPadRight">
 										<small class="list-group-item-text">
@@ -93,7 +94,7 @@
 							</div>
 
 							<div class="list-group margintop5">
-								<a data-ng-repeat="assignment in assignments | limitTo:5 | orderBy: 'due'" data-ng-href="#!/assignments/{{assignment._id}}" class="list-group-item">
+								<a data-ng-repeat="assignment in assignments | limitTo:5 | orderBy: 'due'" data-ng-if="assignment.acode == authentication.user.accesscode" data-ng-href="#!/assignments/{{assignment._id}}" class="list-group-item">
 									<div class="row">
 										<div class="col-md-3 noPadLeft">
 											<p data-ng-bind="assignment.due | date:'mediumDate'" style="padding-top:10px"></p>
@@ -128,7 +129,7 @@
 	<div class="container margintop marginbottom25">
 		<div class="row">
 			<div class="col-md-2 noPadLeft borderit">
-				<img class="img-center" src="modules/core/img/users/100x100.gif"/>
+				<img class="img-center" src="modules/core/img/users/{{ authentication.user.uimage }}s.png"/>
 				<br>
 				<p>Welcome, <span data-ng-bind="authentication.user.displayName"></span></p>
 			</div>

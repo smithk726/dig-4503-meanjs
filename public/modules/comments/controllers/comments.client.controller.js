@@ -10,7 +10,9 @@ angular.module('comments').controller('CommentsController', ['$scope', '$statePa
 			// Create new Comment object
 			var comment = new Comments ({
 				thecomment: this.thecomment,
-				mparent: $scope.message._id
+				mparent: $scope.message._id,
+				cimage: $scope.authentication.user.uimage,
+				ccode: $scope.authentication.user.accesscode
 			});
 
 			// Redirect after save
