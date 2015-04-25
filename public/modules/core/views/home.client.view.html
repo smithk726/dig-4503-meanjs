@@ -1,13 +1,13 @@
 <section data-ng-controller="HomeController" data-ng-hide="authentication.user">
-	<div class="jumbotron text-center">
+	<div class="jumbotron text-center" style="background:white">
 		<div class="container marginbottom25">
 			<div class="row">
 				<div class="col-md-5">
-					<img alt="fish" class="img-responsive img-center" src="modules/core/img/brand/place.gif"/>
+					<img alt="fish" class="img-responsive img-center" src="modules/core/img/brand/kids.jpg"/>
 				</div>
 				<div class="col-md-7 text-left">
-					<h1>Words</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis turpis, faucibus a sem non, iaculis bibendum sem. Phasellus in vehicula urna. Sed nisl lectus, ullamcorper non lectus a, placerat pretium odio. Donec cursus ipsum et tempus ullamcorper.</p>
+					<h1>Welcome to Florida Grades</h1>
+					<p>Molding todays students into tomorrows leaders. The award winning online teacher, student, and parent resource for K-5</p>
 				</div>
 			</div>
 		</div>
@@ -16,34 +16,55 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/220x220.gif"/>
+				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/kids2.jpg"/>
 				<div class="padme text-justify">
-					<h4>Nam ac tincidunt arcu. Etiam risus diam, hendrerit eget odio ut, varius mattis odio.</h4>
+					<p>More hands on approach to your child's education. Voted the top web site for elementary schools for the 2nd year</p>
 				</div>
 			</div>
 
 			<div class="col-md-4">
-				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/220x220.gif"/>
+				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/teacher.jpg"/>
 				<div class="padme text-justify">
-					<h4>Nam ac tincidunt arcu. Etiam risus diam, hendrerit eget odio ut, varius mattis odio.</h4>
+					<p>Number one resource used by over 200 Florida teachers.</p>
 				</div>
 			</div>
 
 			<div class="col-md-4">
-				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/220x220.gif"/>
+				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/board.png"/>
 				<div class="padme text-justify">
-					<h4>Nam ac tincidunt arcu. Etiam risus diam, hendrerit eget odio ut, varius mattis odio.</h4>
+					<p>Over a 97% satisfaction from Florida Parents since 2013.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
-		<div class="row text-center">
-			<h2>Something major here</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="awards" class="img-responsive img-center" src="modules/core/img/brand/awards.png"/>
+			</div>
+		</div>
+	</div>
+			
+	<div class="container">
+		<div class="row">
+			<p class="about"> "Our humble company began in the classroom and took off from there. That was 2 years ago and the success of this web application is more than we had hoped for. As students in elementary school the only way to track progress was through report cards every couple of months. Why not use technology to improve relaying information between teacher, student, and parents easy with the click of a button? This project has reached the lives of thousands of K-5 students in Florida and we hope will reach millions nationwide within the next 5 years."  -<strong> Kaitlyn Smith</strong> </p>
+			<div class="col-md-6">
+				<img float="left" alt="kk" class="img-responsive img-center" src="modules/core/img/brand/kk.png"/> 
+			</div>
+
+			<div class="col-md-6">
+				<img float="left" alt="mel" class="img-responsive img-center" src="modules/core/img/brand/me.png"/> 
+			</div>
+			
 		</div>
 	</div>
 
+	<footer>
+		<div class="row text-center">
+			<h5>Copyright 2015 &copy Florida Grades. All Rights Reserved </h5>
+		</div>
+	</footer>
 </section>
 
 <section data-ng-controller="HomeController" data-ng-show="authentication.user && authentication.user.utype == 'Teacher'">
@@ -137,7 +158,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/planner.png"/>
 							<br>
 							<a href="/#!/planners">to planner</a>
 						</div>
@@ -145,7 +166,7 @@
 
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/planner.png"/>
 							<br>
 							<a href="/#!/assignments">to assignments</a>
 						</div>
@@ -155,7 +176,7 @@
 				<div class="row margintop15">
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/message.jpg"/>
 							<br>
 							<a href="/#!/messages">to messages</a>
 						</div>
@@ -163,7 +184,8 @@
 
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/300x300.gif"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/fish.png"/>
+							<p style="padding-top:10px">Keep up the good work kids!</p>
 						</div>
 					</div>
 				</div>

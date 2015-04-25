@@ -6,7 +6,7 @@ body {
 	margin-top: 50px;
 }
 .jumbotron {
-	margin-top: 30px;
+	padding-top: 90px;
 }
 .img-center {
 	display: block;
@@ -74,6 +74,8 @@ body {
 .navbar-nav > li > a {
 	color: white;
 	text-shadow: none;
+	padding-top: 24px;
+	padding-bottom: 25px;
 }
 .navbar-nav > li > a:hover {
 	background: #476DAD;
@@ -91,6 +93,17 @@ body {
 }
 .navbar-brand {
 	padding: 0;
+}
+.navbar {
+	min-height: 70px;
+}
+
+/* FOOTER */
+footer {
+	margin-top: 30px;
+	padding: 15px 0;
+	color:white;
+	background: #252525;
 }
 
 /* BUTTONS */
