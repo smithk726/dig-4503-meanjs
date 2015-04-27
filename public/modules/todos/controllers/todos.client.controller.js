@@ -1,8 +1,8 @@
 'use strict';
 
 // Todos controller
-angular.module('todos').controller('TodosController', ['$scope', '$stateParams', '$route', '$location', 'Authentication', 'Todos',
-	function($scope, $stateParams, $route, $location, Authentication, Todos) {
+angular.module('todos').controller('TodosController', ['$scope', '$http', '$stateParams', '$route', '$location', 'Authentication', 'Todos',
+	function($scope, $http, $stateParams, $route, $location, Authentication, Todos) {
 		$scope.authentication = Authentication;
 
 		// Create new Todo
@@ -15,13 +15,14 @@ angular.module('todos').controller('TodosController', ['$scope', '$stateParams',
 			// Redirect after save
 			todo.$save(function(response) {
 				//$location.path('#!/');
-				$route.reload();
 
 				// Clear form fields
 				$scope.dothis = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+			$scope.todos = Todos.query();
+			$scope.dothis = '';
 		};
 
 		// Remove existing Todo
@@ -40,6 +41,20 @@ angular.module('todos').controller('TodosController', ['$scope', '$stateParams',
 				});
 			}
 		};
+
+		$scope.deleteTodo = function(id) {
+	        $http.delete('todos/' + id)
+	            .success(function(data) {
+	                $scope.todos = data;
+	                //$scope.apply(function() {
+	                //	$scope.todos = data;
+	                //});
+	            	$scope.todos = Todos.query();
+	            })
+	            .error(function(data) {
+	                console.log('Error: ' + data);
+	            });
+	    };
 
 		// Update existing Todo
 		$scope.update = function() {

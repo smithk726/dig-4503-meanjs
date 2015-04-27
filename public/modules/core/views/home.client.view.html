@@ -147,7 +147,7 @@
 												<p data-ng-bind="todo.dothis" style="padding-top:10px;"></p>
 											</div>
 											<div class="col-md-2 noPadRight">
-												<span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer; padding-top:12px;" data-ng-click="remove();"></span>
+												<span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer; padding-top:12px;" data-ng-click="deleteTodo(todo._id);"></span>
 											</div>
 										</div>
 									</div>
@@ -160,7 +160,7 @@
 										<div class="form-group">
 											<label class="control-label" for="dothis">What to do?</label>
 											<div class="controls">
-                                        		<input type="text" data-ng-model="dothis" id="dothis" class="form-control" placeholder="To Do" required>
+                                        		<input type="text" data-ng-model="dothis" id="dothis" class="form-control" placeholder="To Do">
                                     		</div>
 										</div>
 

@@ -21,7 +21,19 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(todo);
+			//implement the list todos into this
+			Todo.find().sort('-created').populate('user', 'displayName').exec(function(err, todos) {
+				if (err) {
+					return res.status(400).send({
+						message: errorHandler.getErrorMessage(err)
+					});
+				} else {
+					console.log(todos);
+					res.json(todos);
+				}
+			});
+
+			//res.jsonp(todo);
 		}
 	});
 };
@@ -47,7 +59,7 @@ exports.update = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(todo);
+			res.jsonp(req.todo);
 		}
 	});
 };
@@ -64,6 +76,7 @@ exports.delete = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			
 			res.jsonp(todo);
 		}
 	});
@@ -79,6 +92,7 @@ exports.list = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log(todos);
 			res.jsonp(todos);
 		}
 	});

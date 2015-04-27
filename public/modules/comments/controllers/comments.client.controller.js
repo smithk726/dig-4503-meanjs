@@ -24,6 +24,8 @@ angular.module('comments').controller('CommentsController', ['$scope', '$statePa
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+			$scope.comments = Comments.query();
+			$scope.thecomment = '';
 		};
 
 		// Remove existing Comment

@@ -22,7 +22,15 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(comment);
+			Comment.find().sort('-created').populate('user', 'displayName').exec(function(err, comments) {
+				if (err) {
+					return res.status(400).send({
+						message: errorHandler.getErrorMessage(err)
+					});
+				} else {
+					res.json(comments);
+				}
+			});
 		}
 	});
 };
