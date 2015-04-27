@@ -1,23 +1,24 @@
 'use strict';
 
 // Todos controller
-angular.module('todos').controller('TodosController', ['$scope', '$stateParams', '$location', 'Authentication', 'Todos',
-	function($scope, $stateParams, $location, Authentication, Todos) {
+angular.module('todos').controller('TodosController', ['$scope', '$stateParams', '$route', '$location', 'Authentication', 'Todos',
+	function($scope, $stateParams, $route, $location, Authentication, Todos) {
 		$scope.authentication = Authentication;
 
 		// Create new Todo
 		$scope.create = function() {
 			// Create new Todo object
 			var todo = new Todos ({
-				name: this.name
+				dothis: this.dothis
 			});
 
 			// Redirect after save
 			todo.$save(function(response) {
-				$location.path('todos/' + response._id);
+				//$location.path('#!/');
+				$route.reload();
 
 				// Clear form fields
-				$scope.name = '';
+				$scope.dothis = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

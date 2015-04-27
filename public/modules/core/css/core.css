@@ -38,7 +38,7 @@ body {
 	margin-top: 15px;
 }
 .margintop {
-	margin-top: 70px;
+	margin-top: 90px;
 }
 .margintop5 {
 	margin-top: 5px;
@@ -192,6 +192,7 @@ input[type="radio"]  {
 	padding: 8px 0;
 	position: absolute;
 	width: 540px;
+	margin-top: 20px;
 }
 
 
@@ -206,4 +207,9 @@ input[type="radio"]  {
 }
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
+}
+
+.text01 {
+	padding:5px;
+	font-size: 18px;
 }

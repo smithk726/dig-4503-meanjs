@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Todo Schema
  */
 var TodoSchema = new Schema({
-	text: {
+	dothis: {
 		type: String,
 		default: ''
 	},

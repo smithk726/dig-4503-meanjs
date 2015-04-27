@@ -17,22 +17,22 @@
 		<div class="row">
 			<div class="col-md-4">
 				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/kids2.jpg"/>
-				<div class="padme text-justify">
+				<div class="text01">
 					<p>More hands on approach to your child's education. Voted the top web site for elementary schools for the 2nd year</p>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/teacher.jpg"/>
-				<div class="padme text-justify">
+				<div class="text01">
 					<p>Number one resource used by over 200 Florida teachers.</p>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<img alt="" class="img-responsive img-center" src="modules/core/img/brand/board.png"/>
-				<div class="padme text-justify">
-					<p>Over a 97% satisfaction from Florida Parents since 2013.</p>
+				<div class="text01">
+					<hp>Over a 97% satisfaction from Florida Parents since 2013.</p>
 				</div>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 			
 	<div class="container">
 		<div class="row">
-			<p class="about"> "Our humble company began in the classroom and took off from there. That was 2 years ago and the success of this web application is more than we had hoped for. As students in elementary school the only way to track progress was through report cards every couple of months. Why not use technology to improve relaying information between teacher, student, and parents easy with the click of a button? This project has reached the lives of thousands of K-5 students in Florida and we hope will reach millions nationwide within the next 5 years."  -<strong> Kaitlyn Smith</strong> </p>
+			<p class="about"> "Our humble company began in the classroom and took off from there. That was two years ago and the success of this web application is more than we had hoped for. As students in elementary school the only way to track progress was through report cards every couple of months. Why not use technology to improve relaying information between teacher, student, and parents easy with the click of a button? This project has reached the lives of thousands of K-5 students in Florida and we hope will reach millions nationwide within the next five years."  -<strong> Kaitlyn Smith</strong> </p>
 			<div class="col-md-6">
 				<img float="left" alt="kk" class="img-responsive img-center" src="modules/core/img/brand/kk.png"/> 
 			</div>
@@ -107,8 +107,8 @@
 					</div>
 				</div>
 
-				<div data-ng-controller="AssignmentsController" data-ng-init="find()" class="row margintop15">
-					<div class="col-md-8 noPadLeft">
+				<div class="row margintop15">
+					<div data-ng-controller="AssignmentsController" data-ng-init="find()" class="col-md-8 noPadLeft">
 						<div class="row borderit">
 							<div class="row">
 								<h3 class="margintop5">Upcoming Assignments</h3>
@@ -132,11 +132,46 @@
 							</div>
 						</div>
 					</div>
-					<div data-ng-controller="TodosController" class="col-md-4 noPadRight">
+
+					<div data-ng-controller="TodosController" data-ng-init="find()" class="col-md-4 noPadRight">
 						<div class="row borderit">
 							<div class="row">
 								<h3 class="margintop5">To Do</h3>
-								<input> <button>Add</button>
+							</div>
+
+							<div class="row">
+								<div class="list-group margintop5">
+									<div data-ng-repeat="todo in todos" data-ng-if="todo.user.displayName == authentication.user.displayName" class="list-group-item">
+										<div class="row">
+											<div class="col-md-10 noPadLeft">
+												<p data-ng-bind="todo.dothis" style="padding-top:10px;"></p>
+											</div>
+											<div class="col-md-2 noPadRight">
+												<span class="glyphicon glyphicon-remove" aria-hidden="true" style="cursor:pointer; padding-top:12px;" data-ng-click="remove();"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<form class="form-horizontal" data-ng-submit="create()" novalidate>
+									<fieldset>
+										<div class="form-group">
+											<label class="control-label" for="dothis">What to do?</label>
+											<div class="controls">
+                                        		<input type="text" data-ng-model="dothis" id="dothis" class="form-control" placeholder="To Do" required>
+                                    		</div>
+										</div>
+
+										<div class="form-group">
+		                                    <input type="submit" class="btn btn-default">
+		                                </div>
+		                                <div data-ng-show="error" class="text-danger">
+		                                    <strong data-ng-bind="error"></strong>
+		                                </div>
+									</fieldset>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -158,7 +193,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/planner.png"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/calender.png"/>
 							<br>
 							<a href="/#!/planners">to planner</a>
 						</div>
@@ -166,7 +201,7 @@
 
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/planner.png"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/assignment.png"/>
 							<br>
 							<a href="/#!/assignments">to assignments</a>
 						</div>
@@ -176,7 +211,7 @@
 				<div class="row margintop15">
 					<div class="col-md-6">
 						<div class="row borderit text-center">
-							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/message.jpg"/>
+							<img alt="" class="img-responsive img-center" src="modules/core/img/stud/message.png"/>
 							<br>
 							<a href="/#!/messages">to messages</a>
 						</div>
