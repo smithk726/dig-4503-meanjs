@@ -1,0 +1,58 @@
+<section data-ng-controller="ChatsController" data-ng-init="find()">
+    <div class="container">
+        <div class="page-header">
+            <h1>Live Chat</h1>
+            <p>Chat with your class instantly.</p>
+        </div>
+
+        <div class="row borderit">
+            <div class="col-md-9 noPadLeft">
+                <div class="row marginbottom25 margintop15">
+                    <div class="col-md-12 borderit">
+                        <ul class="chatmessages">
+                            <li ng-repeat="message in messages">
+                                <div class="row">
+                                    <div class="col-md-2 noPadLeft">
+                                        {{message.chatname}}
+                                    </div>
+
+                                    <div class="col-md-10 noPadRight">
+                                        {{message.text}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 noPadLeft noPadRight">
+                        <form class="form-horizontal" data-ng-submit="create()">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input id="chatm" type="text" data-ng-model="name" placeholder="What do you want to say?"/>
+                                    <input id="chatbutton" type="submit" class="btn btn-default">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row marginbottom25 margintop15">
+                    <div class="col-md-12 borderit">
+                        <p>Make a message to let people know you're here.</p>
+                        <ul class="chatmessages">
+                            <li ng-repeat="theuser in theusers">
+                                <div class="row">
+                                    {{theuser}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

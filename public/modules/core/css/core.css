@@ -195,6 +195,25 @@ input[type="radio"]  {
 	margin-top: 20px;
 }
 
+/* Chat */
+#chatm {
+	width:90%;
+}
+#chatbutton {
+	width:9%;
+}
+.chatmessages {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.chatmessages li {
+	padding: 5px 10px;
+}
+.chatmessages li:nth-child(odd) {
+	background: #eee;
+}
+
 
 .undecorated-link:hover {
 	text-decoration: none;
